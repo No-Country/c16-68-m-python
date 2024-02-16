@@ -98,9 +98,8 @@
 
 <p align="left">Hola soy Patricio Andrade y mi Roll es Tester<br>Hola soy Gustavo Arluna y mi Roll es Backend<br>Hola soy Marcelo Casse y mi Roll es Frontend<br>Hola soy Mauricio Daza y mi Roll es Backend<br>Hola soy Cadenas Diego y mi Roll es Backend<br>Hola soy Elizabeth Escobar y mi Roll es Backend<br>Hola soy Enoc Figueroa y mi Roll es Backend<br>Hola soy Veronica Ludemann y mi Roll es Diseñadora ux/ui<br>Hola soy Yasiel Poll y mi Roll es Backend<br>Hola soy Andres Solarte y mi Roll es Backend<br>Hola soy Luyeinne Soler y mi Roll es Backend<br>Hola soy Ruth Vacc y mi Roll es Front End<br>Hola soy Nieves Cristian y mi Roll es Backend</p>
 
-###
 <div align="center">
-  <img height="200" src="https://octodex.github.com/images/femalecodertocat.png"  />
+  <img height="100" src="https://octodex.github.com/images/femalecodertocat.png"  />
 </div>
 
 ###
@@ -111,10 +110,10 @@
 
 <div align="left">
   <a href="www.linkedin.com/in/patricia-fernandez-rojas" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="30" height="20" alt="linkedin logo"  />
   </a>
   <a href="pathyfernandez" target="_blank">
-    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo"  />
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="30" height="20" alt="discord logo"  />
   </a>
 </div>
 
