@@ -96,10 +96,29 @@
 
 ###
 
-<p align="left">Hola soy Patricio Andrade y mi Roll es Tester<br>Hola soy Gustavo Arluna y mi Roll es Backend<br>Hola soy Marcelo Casse y mi Roll es Frontend<br>Hola soy Mauricio Daza y mi Roll es Backend<br>Hola soy Cadenas Diego y mi Roll es Backend<br>Hola soy Elizabeth Escobar y mi Roll es Backend<br>Hola soy Pathy Fernandez y mi Roll es Frontend / PM<br>Hola soy Enoc Figueroa y mi Roll es Backend<br>Hola soy Veronica Ludemann y mi Roll es Diseñadora ux/ui<br>Hola soy Yasiel Poll y mi Roll es Backend<br>Hola soy Andres Solarte y mi Roll es Backend<br>Hola soy Luyeinne Soler y mi Roll es Backend<br>Hola soy Ruth Vacc y mi Roll es Front End<br>Hola soy Nieves Cristian y mi Roll es Backend</p>
+<p align="left">Hola soy Patricio Andrade y mi Roll es Tester<br>Hola soy Gustavo Arluna y mi Roll es Backend<br>Hola soy Marcelo Casse y mi Roll es Frontend<br>Hola soy Mauricio Daza y mi Roll es Backend<br>Hola soy Cadenas Diego y mi Roll es Backend<br>Hola soy Elizabeth Escobar y mi Roll es Backend<br>Hola soy Enoc Figueroa y mi Roll es Backend<br>Hola soy Veronica Ludemann y mi Roll es Diseñadora ux/ui<br>Hola soy Yasiel Poll y mi Roll es Backend<br>Hola soy Andres Solarte y mi Roll es Backend<br>Hola soy Luyeinne Soler y mi Roll es Backend<br>Hola soy Ruth Vacc y mi Roll es Front End<br>Hola soy Nieves Cristian y mi Roll es Backend</p>
+
+###
+<div align="center">
+  <img height="200" src="https://octodex.github.com/images/femalecodertocat.png"  />
+</div>
 
 ###
 
+<p align="left">Hola soy Pathy Fernandez y mi Roll es Frontend / PM</p>
+
+###
+
+<div align="left">
+  <a href="www.linkedin.com/in/patricia-fernandez-rojas" target="_blank">
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo"  />
+  </a>
+  <a href="pathyfernandez" target="_blank">
+    <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/discord/default.svg" width="52" height="40" alt="discord logo"  />
+  </a>
+</div>
+
+###
 <div align="center">
   <img height="200" src="https://i.ytimg.com/vi/IeGa5-PcfMU/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLDMvP2k7FEOB5DlpvkdkQzm0u4ciQ"  />
 </div>
