@@ -96,7 +96,7 @@
 
 ###
 
-<p align="left">Hola soy Patricio Andrade y mi Roll es Tester<br>Hola soy Gustavo Arluna y mi Roll es Backend<br>Hola soy Marcelo Casse y mi Roll es Frontend<br>Hola soy Mauricio Daza y mi Roll es Backend<br>Hola soy Cadenas Diego y mi Roll es Backend<br>Hola soy Elizabeth Escobar y mi Roll es Backend<br>Hola soy Enoc Figueroa y mi Roll es Backend<br>Hola soy Veronica Ludemann y mi Roll es Diseñadora ux/ui<br>Hola soy Yasiel Poll y mi Roll es Backend<br>Hola soy Andres Solarte y mi Roll es Backend<br>Hola soy Luyeinne Soler y mi Roll es Backend<br>Hola soy Ruth Vacc y mi Roll es Front End<br>Hola soy Nieves Cristian y mi Roll es Backend</p>
+<p align="left">Hola soy Patricio Andrade y mi Rol es Tester<br>Hola soy Gustavo Arluna y mi Rol es Backend<br>Hola soy Marcelo Casse y mi Rol es Frontend<br>Hola soy Mauricio Daza y mi Rol es Backend<br>Hola soy Cadenas Diego y mi Rol es Backend<br>Hola soy Elizabeth Escobar y mi Rol es Backend<br>Hola soy Enoc Figueroa y mi Rol es Backend<br>Hola soy Veronica Ludemann y mi Rol es Diseñadora ux/ui<br>Hola soy Yasiel Pol y mi Roll es Backend<br>Hola soy Andres Solarte y mi Rol es Backend<br>Hola soy Luyeinne Soler y mi Rol es Backend<br>Hola soy Ruth Vacc y mi Rol es Front End<br>Hola soy Nieves Cristian y mi Rol es Backend</p>
 
 <div align="center">
   <img height="100" src="https://octodex.github.com/images/femalecodertocat.png"  />
@@ -104,7 +104,7 @@
 
 ###
 
-<p align="left">Hola soy Pathy Fernandez y mi Roll es Frontend / PM</p>
+<p align="left">Hola soy Pathy Fernandez y mi Rol es Frontend / PM</p>
 
 ###
 
