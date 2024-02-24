@@ -9,7 +9,7 @@ class Emociones(models.Model):
     # No se si se va a agregar una imagen de la emocion en la base de datos
 
     def __str__(self):
-        return f"emotion_id: {self.id} emotion_name {self.name}"
+        return self.name
 
 
 class RegistroDeEmociones(models.Model):
@@ -21,7 +21,7 @@ class RegistroDeEmociones(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return f"user_id: {self.user_id} date_joined: {self.date_joined} id_emotion: {self.id_emotion} description: {self.description}"
+        return f"user_id: {self.user_id} id_emotion: {self.id_emotion} date: {self.date_joined} "
 
 
 class CheckList(models.Model):
@@ -30,4 +30,4 @@ class CheckList(models.Model):
     date_joined = models.DateField()
 
     def __str__(self):
-        return f"user_id: {self.user_id} activity_name: {self.activity_name} date_joined: {self.date_joined}"
+        return f"user_id: {self.user_id} activity_name: {self.activity_name} date: {self.date_joined}"
