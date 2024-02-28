@@ -16,7 +16,7 @@ class EmotionsLog(models.Model):
     # on_delete=models.CASCADE significa que si el usuario es borrado del sistema, sus datos en esta tabla tambien se borraran.
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     date_joined = models.DateField(unique=True)
-    id_emotion = models.ForeignKey(Emotions, on_delete=models.CASCADE)
+    emotion_id = models.ForeignKey(Emotions, on_delete=models.CASCADE)
     description = models.TextField()
 
     def __str__(self):
