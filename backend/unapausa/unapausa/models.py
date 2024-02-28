@@ -25,10 +25,19 @@ class RegistroDeEmociones(models.Model):
         return f"user_id: {self.user_id} id_emotion: {self.id_emotion} date: {self.date_joined} "
 
 
-class CheckList(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    activity_name = models.CharField(max_length=35)
-    date_joined = models.DateField()
+class Healthy_Habit(models.Model):
+    habit = models.CharField(max_length=50)
 
     def __str__(self):
-        return f"user_id: {self.user_id} activity_name: {self.activity_name} date: {self.date_joined}"
+        return f"habit: {self.habit}"
+
+
+class CheckList(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    habit = models.ForeignKey(Healthy_Habit, on_delete=models.CASCADE)
+    date_joined = models.DateField()
+    is_done = models.BooleanField(default=False)
+    description = models.TextField(null=True)
+
+    def __str__(self):
+        return f"user_id: {self.user_id} habit: {self.habit} date: {self.date_joined}"
