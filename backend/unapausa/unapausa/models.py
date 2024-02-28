@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 
 class Emotions(models.Model):
-    # TODO: saber si usaremos un campo de imagen ya que asi esta en el diagrama, si es si, implementarlo.
     name = models.CharField(max_length=15)
     img_emotion = models.ImageField(upload_to="files/staticfiles/emotions")
 
