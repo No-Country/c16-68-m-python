@@ -1,22 +1,18 @@
-import './App.css';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import ToDo from "./components/ToDo";
+import Calendario from "./components/Calendario";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="lista" element={<ToDo />}></Route>
+        <Route path="calendario" element={<Calendario />}></Route>
+      </Routes>
+    </BrowserRouter>
+    // <div className="App">
+    //   <Todo />
+    // </div>
   );
 }
 
