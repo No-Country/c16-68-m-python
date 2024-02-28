@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 
 class Emotions(models.Model):
     name = models.CharField(max_length=15)
-    img_emotion = models.ImageField(upload_to="files/staticfiles/emotions")
+    # I added this route just for convention, but i think it can be improved.
+    img_emotion = models.ImageField(upload_to="backend/files/staticfiles/emotions")
 
     def __str__(self):
         return self.name
