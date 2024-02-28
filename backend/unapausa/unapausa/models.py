@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 
 class Emotions(models.Model):
     # TODO: saber si usaremos un campo de imagen ya que asi esta en el diagrama, si es si, implementarlo.
-    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=15)
     img_emotion = models.ImageField(upload_to="files/staticfiles/emotions")
 
@@ -18,7 +17,7 @@ class EmotionsLog(models.Model):
     # on_delete=models.CASCADE significa que si el usuario es borrado del sistema, sus datos en esta tabla tambien se borraran.
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     date_joined = models.DateField(unique=True)
-    id_emotion = models.ForeignKey(Emotions)
+    id_emotion = models.ForeignKey(Emotions, on_delete=models.CASCADE)
     description = models.TextField()
 
     def __str__(self):
