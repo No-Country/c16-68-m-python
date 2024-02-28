@@ -12,7 +12,6 @@ class Emotions(models.Model):
 
 
 class EmotionsLog(models.Model):
-    # TODO: creo que hay un bug en ManyTomanyField.
     # Relacion de uno a muchos hecha automaticamente al crear el obj ForeignKey.
     # on_delete=models.CASCADE significa que si el usuario es borrado del sistema, sus datos en esta tabla tambien se borraran.
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
