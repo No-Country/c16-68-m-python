@@ -21,7 +21,7 @@ class EmotionsLog(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return f"user_id: {self.user_id}\n id_emotion: {self.id_emotion} date: {self.date_joined} "
+        return f"{self.id_emotion.name}/ Date: {self.date_joined} "
 
 
 class HealthyHabit(models.Model):
@@ -29,7 +29,7 @@ class HealthyHabit(models.Model):
     description = models.TextField(null=True)
 
     def __str__(self):
-        return f"habit: {self.habit}"
+        return self.habit_name
 
 
 class CheckList(models.Model):
@@ -39,4 +39,4 @@ class CheckList(models.Model):
     is_done = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"user_id: {self.user_id} habit: {self.habit} date: {self.date_joined}"
+        return f"habit: {self.habit_id.habit_name}/ date: {self.date_joined}/ is_done: {self.is_done}"
