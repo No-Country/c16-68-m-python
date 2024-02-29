@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# MEDIA_ROOT is the path where the files are located
+# MEDIA_ROOT is the path where the files are located in the server
 MEDIA_ROOT = ""
 # MEDIA_URL is the path where the browser is going to look for theses files
 MEDIA_URL = ""
