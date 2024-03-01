@@ -1,0 +1,7 @@
+README.md
+backend/env/
+backend/unapausa/db.sqlite3
+backend/unapausa/accounts/__pycache__
+backend/unapausa/accounts/migrations/
+backend/unapausa/unapausa/__pycache__
+backend/unapausa/unapausa/migrations/
