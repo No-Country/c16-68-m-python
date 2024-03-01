@@ -1,6 +1,7 @@
 // Footer.jsx
 import React from 'react';
 import logo from './images/logo.png'; 
+import instagram from './images/instagram.png';
 const Footer = () => (
 <footer className="footer">
 <div className="footer-content">
@@ -15,9 +16,7 @@ const Footer = () => (
     </div>
     <div className="footer-social">
     {/* Enlaces a redes sociales */}
-    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-        <img src="./images/instagram.png" alt="Instagram" height="30" />
-    </a>
+        <img src={instagram} alt="instagram" height="50" /> 
     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
         <img src="Recursos/src/images/facebook.png" alt="Facebook" height="30" />
     </a>
