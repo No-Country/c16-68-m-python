@@ -1,6 +1,6 @@
 .mypy_cache
 venv-nc/
-venv-nc/Lib
+backend/unapausa/checklist/migrations
 README.md
 backend/env/
 backend/unapausa/db.sqlite3
