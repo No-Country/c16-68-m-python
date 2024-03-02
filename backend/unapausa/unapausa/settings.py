@@ -39,6 +39,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "unapausa",
     "rest_framework",
+    "rest_framework_simplejwt",
+    "rest_framework_simplejwt.token_blacklist",
+    "accounts",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -46,6 +49,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
+
+AUTH_USER_MODEL = "unapausa.User"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -60,10 +65,10 @@ MIDDLEWARE = [
 ROOT_URLCONF = "unapausa.urls"
 
 REST_FRAMEWORK = {
-    'NON_FIELD_ERRORS_KEY':'errors',
-    'DEFAULT_AUTHENTICATION_CLASSES':(
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+    "NON_FIELD_ERRORS_KEY": "errors",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
 }
 
 SIMPLE_JWT = {
