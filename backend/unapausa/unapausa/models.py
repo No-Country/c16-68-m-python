@@ -1,6 +1,60 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.base_user import BaseUserManager
+from django.contrib.auth.models import AbstractUser
+from rest_framework_simplejwt.tokens import RefreshToken
 
+
+
+class CustomUserManager(BaseUserManager):
+
+    def create_user(self, email, password, **extra_fields):
+        email= self.normalize_email(email)
+
+        user = self.model(
+            email= email,
+            **extra_fields
+        )
+        
+        user.set_password(password)
+        user.save()
+
+        return user
+
+    def create_superuser(self, email, password, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser has to have is_staff being true')
+
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('Superuser has to have is_superuser being true')
+
+        return self.create_user(email=email, password=password, **extra_fields)
+
+
+
+class User(AbstractUser):
+
+    email = models.EmailField(max_length=80, unique=True)
+    username = models.CharField(max_length=50, unique=True)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+
+    objects = CustomUserManager()
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+
+    def __str__(self):
+        text = '{0}    {1}'
+        return text.format(self.email, self.username)
+
+    def tokens(self):
+        refresh = RefreshToken.for_user(self)
+        return {
+            'refresh': str(refresh),
+            'access': str(refresh.access_token)
+        }
 
 class Emotions(models.Model):
     name = models.CharField(max_length=15)

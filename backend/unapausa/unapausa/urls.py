@@ -23,6 +23,8 @@ from django.conf import settings
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
+    path("accounts/", include('accounts.urls')),
+
 ]
 
 # This ts the config to show img when user clicks on the url
