@@ -1,4 +1,5 @@
 .mypy_cache
+.vscode/
 venv-nc/
 backend/unapausa/checklist/migrations
 README.md
@@ -8,6 +9,8 @@ backend/unapausa/accounts/__pycache__
 backend/unapausa/accounts/migrations/
 backend/unapausa/unapausa/__pycache__
 backend/unapausa/unapausa/migrations/
+backend/unapausa/checklist/__pycache__
+backend/unapausa/checklist/migrations
 
 # Compiled source #
 ###################
