@@ -1,0 +1,18 @@
+:root{
+    --cardemotion-primary : #FFDD6D
+}
+
+li:hover{
+    transform: translateY(-10px);
+}
+
+li{
+    transition: all 1s ease
+}
+
+#emotioncard{
+    background-color: var(--cardemotion-primary);
+    width: 712px;
+    height: 409px;
+}
+

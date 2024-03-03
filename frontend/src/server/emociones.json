@@ -1,0 +1,34 @@
+{
+    "emociones" : [
+        {
+            "id":1,
+            "nombre":"Feliz",
+            "img_emocion":"Feliz.png"
+        },
+        {
+            "id":2,
+            "nombre":"Miedo",
+            "img_emocion":"Miedo.png"
+        },
+        {
+            "id":3,
+            "nombre":"Triste",
+            "img_emocion":"Triste.png"
+        },
+        {
+            "id":4,
+            "nombre":"Amor",
+            "img_emocion":"Amor.png"
+        },
+        {
+            "id":5,
+            "nombre":"Enojo",
+            "img_emocion":"Enojo.png"
+        },
+        {
+            "id":6,
+            "nombre":"Sorpresa",
+            "img_emocion":"Sorpresa.png"
+        }
+    ]
+}

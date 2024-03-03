@@ -1,39 +1,45 @@
-import Emocion from '../../assets/RastreoEmociones/Frame.png'
-import Emocion1 from '../../assets/RastreoEmociones/Frame1.png'
-import Emocion2 from '../../assets/RastreoEmociones/Frame2.png'
-
-import {format} from 'date-fns'
-import {es} from 'date-fns/locale'
-
 import { useState } from 'react'
 import { createPortal } from 'react-dom';
-
-import './index.css'
+import { EmocionesContext } from 'context/RastreoEmociones.context';
 import Modal from './Modal'
+import './css/card.css'
 
-const Card = ({titulo,fechaActual,Emociones}) => {
-    const fecha = new Date()
-    const fechaFormateada = format(fecha, "dd MMM yyyy",{locale: es});
-    
+const Card = ({title,current_date,emotions}) => {
+
     const [showModal, setShowModal] = useState(false);
+    const [emotion,SetEmocion] = useState(null)
+    
     return (
-        <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'space-evenly',
-            gap:'2rem',background:'#FFDD6D',borderRadius:'1rem',width:'712px',height:'409px',textAlign:'center'}}>
+        <div className='d-flex flex-column align-items-center justify-content-evenly gap-3 text-center rounded-4' id='emotioncard'>
             <div>
-                <h1>¿Cómo te sientes hoy?</h1>
-                <h3 style={{textTransform:'capitalize'}}>{fechaFormateada}</h3>
+                <h1 >{title}</h1>
+                <h3 className='text-capitalize'>{current_date}</h3>
             </div>
-            <ul style={{display:'flex', gap:'2rem'}}>
-                <li className='list-unstyled' role='button' onClick={() => setShowModal(true)}><img src={Emocion} alt="frame"/></li>
-                <li className='list-unstyled' role='button' onClick={() => setShowModal(true)}><img src={Emocion1} alt="frame"/></li>
-                <li className='list-unstyled' role='button' onClick={() => setShowModal(true)}><img src={Emocion2} alt="frame"/></li>
+            <ul className='d-flex gap-3 p-0'>
+                {
+                    emotions.map((emotion) => (
+                        <li key={emotion.id} className='list-unstyled' role='button' 
+                        onClick={(element) =>{
+                            setShowModal(true)
+                            SetEmocion({
+                                emotion_name : element.target.className,
+                                img_url : element.target.src
+                            })
+                        }}>
+                            <img className={emotion.nombre} src={emotion.img_emocion} alt="frame"/>
+                        </li>
+                        
+                    ))
+                }
             </ul>
+            <EmocionesContext.Provider value={emotion}>
             {
                 showModal && createPortal(
                     <Modal onClose={() => setShowModal(false)}></Modal>
                     , document.getElementById('portal')
                 )
             }
+            </EmocionesContext.Provider>
         </div>
     );
 }

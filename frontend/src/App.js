@@ -1,10 +1,10 @@
 import './App.css';
-import Index from './components/RastreoEmociones';
+import RastreoEmociones from './pages/RastreoEmociones';
 
 function App() {
   return (
     <>
-    <Index></Index>
+      <RastreoEmociones/>
     </>
   );
 }

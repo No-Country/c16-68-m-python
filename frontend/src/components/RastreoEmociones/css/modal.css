@@ -1,12 +1,3 @@
-li:hover{
-    transform: translateY(-10px);
-}
-
-li{
-    transition: all 1s ease
-}
-
-
 .btn-modal{
     background-color: transparent;
     border: none;
@@ -35,4 +26,21 @@ li{
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 1000;
+    width: 332px;
+    max-height: 483px;
+    background-color: #ffdd6d;
+}
+
+.modal-body{
+    width: 270px;
+    max-height: 396px;
+    background-color: #FFF0BF;
+}
+
+textarea{
+    background-color: #FFF0BF;
+}
+
+.modal-footer{
+    max-width: 270px;
 }
