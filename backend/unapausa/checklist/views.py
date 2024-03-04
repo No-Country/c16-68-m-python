@@ -9,26 +9,63 @@ from rest_framework.exceptions import status
 from .serializers import HabitsListSerializer, CheckListSerializer
 
 
-# Create your views here.
 @api_view(["GET"])
 @authentication_classes([TokenAuthentication])
 # @permission_classes([IsAuthenticated])
 def get_habits(request):
-    if request.method == "GET":
-        queryset = HealthyHabit.objects.all()
-        s = HabitsListSerializer(queryset, many=True)
-        print(request.headers)
-        print(s.data)
-        return Response(s.data)
-    return Response({"Bad http request"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
+    """
+    This view return the habit list. At first make a query to get all habits, it pass through the serializer to convert this query set to json
+    and return the data.
+    """
+    queryset = HealthyHabit.objects.all()
+    s = HabitsListSerializer(queryset, many=True)
+    return Response(s.data, status=status.HTTP_200_OK)
 
 
-@api_view(["GET", "POST", "PUT", "DELETE"])
+@api_view(["GET", "POST", "DELETE"])
 @authentication_classes([TokenAuthentication])
 # @permission_classes([IsAuthenticated])
-def user_habits(request):
+def user_habits(request, user_id):
+    """
+    This view recieve a url parameter, get that in mind.
+    GET: get the list of the user, if there's no list for this user return a 404 code, otherwise
+    return all the list from this users
+    POST: Save the data into the db, if the date is invalid, return a 400 code.
+    """
     if request.method == "GET":
-        # s = HabitsListSerializer
-        return Response({"You're log in"})
+        print(request.headers)
+        queryset = CheckList.objects.filter(pk=user_id).all()
+        if queryset:
+            s = CheckListSerializer(queryset, many=True)
+            return Response(s.data, status=status.HTTP_200_OK)
+        else:
+            return Response(
+                {"The user hasn't create any lists yet"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
     if request.method == "POST":
-        pass
+        s = CheckListSerializer(
+            data=request.data
+        )  # Create a Serializer and pass the data
+        if s.is_valid():  # To know if all the fields are correct
+            s.save()  # Save to the db
+            return Response({"The data was saved"}, status=status.HTTP_200_OK)
+        else:
+            return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
+    if request.method == "PUT":
+        s = CheckListSerializer(data=request.data)
+        if s.is_valid():
+            s.save()
+            return Response({"The data was updated"}, status=status.HTTP_200_OK)
+        else:
+            return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
+    if request.method == "DELETE":
+        # TODO: delete the data from the checklist
+        s = CheckListSerializer(data=request.data)
+        if s.is_valid():
+            current_list = CheckList.objects.filter(
+                pk=user_id,
+                habit_id=request.data.habit_id,
+                date_joined=request.data.date_joined,
+            )
+            current_list.delete()
