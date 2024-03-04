@@ -22,7 +22,7 @@ def get_habits(request):
     return Response(s.data, status=status.HTTP_200_OK)
 
 
-@api_view(["GET", "POST", "DELETE"])
+@api_view(["GET", "POST", "PUT" "DELETE"])
 @authentication_classes([TokenAuthentication])
 # @permission_classes([IsAuthenticated])
 def user_habits(request, user_id):
@@ -33,7 +33,6 @@ def user_habits(request, user_id):
     POST: Save the data into the db, if the date is invalid, return a 400 code.
     """
     if request.method == "GET":
-        print(request.headers)
         queryset = CheckList.objects.filter(pk=user_id).all()
         if queryset:
             s = CheckListSerializer(queryset, many=True)
