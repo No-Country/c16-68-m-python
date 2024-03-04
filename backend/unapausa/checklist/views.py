@@ -59,14 +59,14 @@ def user_habits(request, user_id):
                     {"This data already exists"}, status=status.HTTP_409_CONFLICT
                 )
             s.save()  # Save to the db
-            return Response({"The data was saved"}, status=status.HTTP_200_OK)
+            return Response(s.data, status=status.HTTP_200_OK)
         else:
             return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
     if request.method == "PUT":
         # TODO: Check if this method work correctly
         s = CheckListSerializer(data=request.data)
         if s.is_valid():
-            s.save()
+
             return Response({"The data was updated"}, status=status.HTTP_200_OK)
         else:
             return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)

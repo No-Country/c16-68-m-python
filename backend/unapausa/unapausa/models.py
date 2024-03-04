@@ -70,7 +70,7 @@ class EmotionsLog(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return f"{self.emotion_id.name}/ Date: {self.date_joined} "
+        return f"{self.emotion_id.name}/ {self.date_joined} "
 
 
 class HealthyHabit(models.Model):
@@ -85,7 +85,8 @@ class CheckList(models.Model):
     user_id = models.ForeignKey("unapausa.User", on_delete=models.CASCADE)
     habit_id = models.ForeignKey(HealthyHabit, on_delete=models.CASCADE)
     date_joined = models.DateField()
+    when_was_done = models.DateField(null=True)
     is_done = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"habit: {self.habit_id.habit_name}/ date: {self.date_joined}/ is_done: {self.is_done}"
+        return f"{self.habit_id.habit_name}/ {self.date_joined}/ is_done: {self.is_done}"

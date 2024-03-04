@@ -12,3 +12,8 @@ class HabitsListSerializer(serializers.ModelSerializer):
     class Meta:
         model = HealthyHabit
         fields = "__all__"
+
+class CheckListUD(serializers.ModelSerializer):
+    class Meta:
+        model = HealthyHabit
+        fields = "__all__"
