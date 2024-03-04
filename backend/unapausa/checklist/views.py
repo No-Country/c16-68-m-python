@@ -22,7 +22,7 @@ def get_habits(request):
     return Response(s.data, status=status.HTTP_200_OK)
 
 
-@api_view(["GET", "POST", "PUT" "DELETE"])
+@api_view(["GET", "POST", "PUT", "DELETE"])
 @authentication_classes([TokenAuthentication])
 # @permission_classes([IsAuthenticated])
 def user_habits(request, user_id):
@@ -33,7 +33,7 @@ def user_habits(request, user_id):
     POST: Save the data into the db, if the date is invalid, return a 400 code.
     """
     if request.method == "GET":
-        queryset = CheckList.objects.filter(pk=user_id).all()
+        queryset = CheckList.objects.filter(user_id=user_id)
         if queryset:
             s = CheckListSerializer(queryset, many=True)
             return Response(s.data, status=status.HTTP_200_OK)
@@ -43,15 +43,27 @@ def user_habits(request, user_id):
                 status=status.HTTP_404_NOT_FOUND,
             )
     if request.method == "POST":
+        print("IN POST")
         s = CheckListSerializer(
             data=request.data
         )  # Create a Serializer and pass the data
         if s.is_valid():  # To know if all the fields are correct
+            isthereany = CheckList.objects.filter(
+                user_id=user_id,
+                habit_id=request.data["habit_id"],
+                date_joined=request.data["date_joined"],
+            )
+            print("IS THERE ONE", isthereany.values())
+            if isthereany:
+                return Response(
+                    {"This data already exists"}, status=status.HTTP_409_CONFLICT
+                )
             s.save()  # Save to the db
             return Response({"The data was saved"}, status=status.HTTP_200_OK)
         else:
             return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
     if request.method == "PUT":
+        # TODO: Check if this method work correctly
         s = CheckListSerializer(data=request.data)
         if s.is_valid():
             s.save()
@@ -59,12 +71,18 @@ def user_habits(request, user_id):
         else:
             return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
     if request.method == "DELETE":
-        # TODO: delete the data from the checklist
-        s = CheckListSerializer(data=request.data)
-        if s.is_valid():
+        # TODO: Check if this method work correctly
+        try:
             current_list = CheckList.objects.filter(
-                pk=user_id,
-                habit_id=request.data.habit_id,
-                date_joined=request.data.date_joined,
+                pk=id,
+                user_id=user_id,
+                habit_id=request.data["habit_id"],
+                date_joined=request.data["date_joined"],
             )
+            print(current_list.values())
             current_list.delete()
+        except Exception as e:
+            print(e)
+        else:
+            return Response({"The data was deleted"}, status=status.HTTP_200_OK)
+        return Response(status=status.HTTP_400_BAD_REQUEST)
