@@ -22,7 +22,7 @@ def get_habits(request):
     return Response(s.data, status=status.HTTP_200_OK)
 
 
-@api_view(["GET", "POST", "DELETE"])
+@api_view(["GET", "POST", "PUT" "DELETE"])
 @authentication_classes([TokenAuthentication])
 # @permission_classes([IsAuthenticated])
 def user_habits(request, user_id):
@@ -33,7 +33,6 @@ def user_habits(request, user_id):
     POST: Save the data into the db, if the date is invalid, return a 400 code.
     """
     if request.method == "GET":
-        print(request.headers)
         queryset = CheckList.objects.filter(pk=user_id).all()
         if queryset:
             s = CheckListSerializer(queryset, many=True)
@@ -61,11 +60,4 @@ def user_habits(request, user_id):
             return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
     if request.method == "DELETE":
         # TODO: delete the data from the checklist
-        s = CheckListSerializer(data=request.data)
-        if s.is_valid():
-            current_list = CheckList.objects.filter(
-                pk=user_id,
-                habit_id=request.data.habit_id,
-                date_joined=request.data.date_joined,
-            )
-            current_list.delete()
+        pass
