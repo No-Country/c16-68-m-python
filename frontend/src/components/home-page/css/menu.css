@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
+
+
+.container{
+    width: 100%;
+    background: url(../recursos/carita.png);
+    background-size: cover;
+    height: 400px;
+    background-color:#F2DE77 ;
+    
+} 
+
+.img-logo{
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 120px;
+    margin-bottom: 10px;
+   
+}
+
+
+#menu-bar{
+    display: none;
+}
+
+header label{
+    float: right;
+    font-size:28px;
+    margin:15px;
+    cursor: pointer;
+    color: white;
+}
+
+.menu{
+    position: absolute;
+    width:100%;
+    height: 100vh;
+    top: 90px;
+    left: 0;
+    transition: all 0.5s;
+    transform:translateX(-100%);
+}
+
+.margin-right{
+    margin-right:50px;
+}
+
+.margin-left{
+    margin-left: 20px;
+}
+
+
+.menu a{
+   display: block;
+   height: 50px;
+   text-decoration: none;
+   padding: 15px;
+   margin-top: 20px;
+   font-family: "Roboto", sans-serif;
+   font-weight: 500;
+   font-style: normal;
+   font-size: 25px;
+   color: #101010;
+}
+
+
+#menu-bar:checked ~ .menu{
+   transform: translateX(0%);
+
+}
+
+
+.menu .btn{
+      border-radius: 60px;
+      font-weight: 500;
+      font-style: normal;
+      font-size: 25px;
+      font-family: "Roboto", sans-serif;
+      border: 2px solid black;
+      margin-top:25px;
+      padding: 6px 30px;
+      box-shadow: 14px 10px 20px 0 rgba(20, 20, 20, 0.3);
+}
+
+  
+.text-banner{
+    width: 100%;
+    height: 100%;
+    height: 50%;
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: nowrap;
+    margin-bottom: 240px;
+    justify-content: center;
+   
+  }
+  
+  
+  .a1{
+    font-family: "Roboto Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 56px;
+    color: #101010;
+    margin-left: 350px;
+    margin-top: 20px;
+    height: 45%;
+  
+  
+   
+  }
+
+
+
+
+
+
+@media only screen and  (min-width:300px) and (max-width: 519px){
+    
+    .text-banner{
+        display: none;
+    }
+
+    .container{
+        width: 100%;
+        background: url(../recursos/carita.png) no-repeat;
+        background-size: auto;
+        background-color: #ECB539;
+        height: 300px;
+        
+        
+     }
+
+
+
+    .menu .btn{
+        border-radius: 60px;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        width: 70%;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 12px 30px;
+        border: 1px solid black;
+        background-color: #ECB539;
+    }
+
+   
+
+    .menu{
+    
+        width: 100%;
+        height: 450px;
+        
+    }
+
+
+    .menu a{
+       text-align: center;
+       margin: 20px auto;
+       text-transform: uppercase;
+       border: 1px solid black;
+       width: 70%;
+       border-radius: 60px;
+       font-size: 18px;
+       font-weight: 600;
+       background-color: #ECB539;
+       box-shadow: 14px 10px 20px 0 rgba(20, 20, 20, 0.3);
+          
+    }
+    
+    .menu a:hover, .btn:hover{
+        color:#EE5627;
+        transform: scale(1.1) ;
+        transition: all 0.8s ease;
+    }
+
+  .img-logo{
+    width: 80px;
+    margin-left: 10px;
+   
+   
+  }
+
+  .img-label{
+    width: 40px;
+    margin-right: 1vw;
+    
+   
+  }
+
+  
+
+}
+
+@media only screen and (min-width: 520px) and (max-width: 749px){
+
+    .text-banner{
+        display: none;
+    }
+
+   .contenedor{
+        width: 100%;
+        background: url(../recursos/carita.png) no-repeat;
+        background-size: auto;
+        background-color: #ECB539;
+        height: 300px;
+     }
+
+    .img-logo{
+        width: 90px;
+        margin-top: 3vh;
+        margin-left:3vw;
+      }
+    
+    .img-label{
+        width: 40px;
+        margin-right: 1vw;
+       
+      }
+
+      
+    .menu .btn{
+      
+       font-weight: 600;
+       font-style: normal;
+       font-size: 18px;
+       font-family: "Roboto", sans-serif;
+       width: 60%;
+       text-align: center;
+       text-transform: uppercase;
+       padding: 12px 30px;
+       border: 1px solid black;
+       background-color: #ecb639;
+     }
+
+   
+
+    .menu{
+    
+        width: 100%;
+        height: 450px;
+    }
+
+
+    .menu a{
+        text-align: center;
+        margin: 20px auto;
+        text-transform: uppercase;
+        border: 1px solid black;
+        width: 60%;
+        border-radius: 60px;
+        font-size: 18px;
+        font-weight: 600;
+        background-color: #ecb639;
+        box-shadow: 14px 10px 20px 0 rgba(20, 20, 20, 0.3);
+    }
+    
+    .menu a:hover, .btn:hover{
+        color:#EE5627;
+        transform: scale(1.1) ;
+        transition: all 0.8s ease;
+    }
+
+    
+
+}
+
+@media only screen and (min-width: 750px) and (max-width:991px){
+    .text-banner{
+        display: none;
+    }
+    
+
+    .contenedor{
+          width: 100%;
+          background: url(../recursos/carita.png) no-repeat;
+          background-size: auto;
+          background-color: #ECB539;
+          height: 300px;
+    }
+
+    .img-logo{
+        width: 100px;
+        margin-top: 2vh;
+        margin-left: 2vw;
+    }
+    
+    .img-label{
+        width: 40px;
+        margin-right: 1vw;
+    }
+
+      
+    .menu .btn{
+        
+        font-weight: 600;
+        font-style: normal;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        width: 50%;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 12px 30px;
+        border: 1px solid black;
+        background-color: #ecb639f0;
+     }
+
+   
+
+    .menu{
+    
+        width: 100%;
+        height: 450px;
+        
+    }
+
+
+    .menu a{
+       text-align: center;
+       margin: 20px auto;
+       text-transform: uppercase;
+       border: 1px solid black;
+       width: 50%;
+       border-radius: 60px;
+       font-size: 18px;
+       font-weight: 600;
+       background-color: #ecb639;
+       box-shadow: 14px 10px 20px 0 rgba(20, 20, 20, 0.3);
+    }
+    
+    .menu a:hover, .btn:hover{
+        color:#EE5627;
+        transform: scale(1.1) ;
+        transition: all 0.8s ease;
+    }
+
+
+
+    
+
+}
+
+@media (min-width:992px){  
+    .container{
+        width: 100%;
+        background: url(../recursos/carita.png);
+        background-size: auto;
+        height: 300px;
+        background-color:#F2DE77 ;
+    } 
+    
+    .margin-right{
+        margin-right:35px;
+    }
+    
+    .margin-left{
+        margin-left: 20px;
+    }
+  
+    .img-logo{
+        width: 90px;
+        margin-top: 2vh;
+        margin-left:8px;
+       
+      }
+    
+    
+    .text-banner{
+        display: none;
+    }
+    
+    .menu{
+        position: static;
+        width: 90%;
+        height: 30%;
+       transform: translateX(0%);
+        float: right;
+        display: flex;
+
+        
+      
+    }
+
+    .menu a{
+        border:none;
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 10px;
+       
+        
+    }
+
+    .menu .btn{
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    header label{
+        display: none;
+    }
+
+    .menu a:hover{
+        background: rgba(#7e380aba); ;
+        transform: scale(1.2) ;
+        transition: all 0.8s ease;
+        color:#FCDC51;
+        text-shadow: 1px 1px 2px black;
+     
+     
+    }
+
+    .menu .btn{
+        
+        font-weight: 600;
+        font-style: normal;
+        font-size: 20px;
+        font-family: "Roboto", sans-serif;
+        width: 20%;
+        text-align: center;
+        margin-top: 15px;
+        padding: 12px 15px;
+        border: 1px solid black;
+       
+     }
+   
+    .back-neutral{
+        background-color: #FFF0BF;
+    }
+
+
+
+
+
+
+}
+  
+  
+@media only screen and (min-width: 1200px) and (max-width:1299px){  
+    .container{
+        width: 100%;
+        background: url(../recursos/carita.png);
+        background-size: cover;
+        height: 400px;
+        background-color:#F2DE77 ;
+    } 
+    
+    .margin-right{
+        margin-right:40px;
+    }
+    
+    .margin-left{
+        margin-left: 20px;
+    }
+  
+    .img-logo{
+        width: 100px;
+        margin-top: 2vh;
+        margin-left:8px;
+       
+      }
+    
+    
+    .text-banner{
+        display: none;
+    }
+    
+    .menu{
+        position: static;
+        width: 90%;
+        height: 30%;
+       transform: translateX(0%);
+        float: right;
+        display: flex;
+
+        
+      
+    }
+
+    .menu a{
+        border:none;
+        font-size: 24px;
+        font-weight: 500;
+        margin-top: 10px;
+       
+        
+    }
+
+
+    header label{
+        display: none;
+    }
+
+    .menu a:hover{
+        background: rgba(#7e380aba); ;
+        transform: scale(1.2) ;
+        transition: all 0.8s ease;
+        color:#FCDC51;
+        text-shadow: 1px 1px 2px black;
+     
+     
+    }
+
+    .menu .btn{
+        
+        font-weight: 500;
+        font-style: normal;
+        font-size: 24px;
+        font-family: "Roboto", sans-serif;
+        width: 20%;
+        text-align: center;
+        margin-top: 15px;
+        padding: 10px 15px;
+        border: 1px solid black;
+       
+     }
+   
+    .back-neutral{
+        background-color: #FFF0BF;
+    }
+
+
+
+
+
+}
+
+@media(min-width:1300px){
+    .container{
+        width: 100%;
+        background: url(../recursos/carita.png);
+        background-size: cover;
+        height: 400px;
+        background-color:#F2DE77 ;
+ 
+
+
+
+        
+    } 
+    .menu{
+        position: static;
+        width: auto;
+        height: auto;
+        transform: translateX(0%);
+        float: right;
+        display: flex;
+       
+    }
+
+    .menu a{
+        border:none;
+    }
+
+    header label{
+        display: none;
+    }
+
+        
+    .margin-right{
+        margin-right:50px;
+    }
+
+    .margin-left{
+        margin-left: 20px;
+    }
+
+
+    .menu a{
+    display: block;
+    height: 50px;
+    text-decoration: none;
+    padding: 15px;
+    margin-top: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 25px;
+    color: #101010;
+
+    }
+
+
+
+    .menu .btn{
+        border-radius: 60px;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 25px;
+        font-family: "Roboto", sans-serif;
+        border: 2px solid black;
+        margin-top:25px;
+        padding: 6px 30px;
+        box-shadow: 14px 10px 20px 0 rgba(20, 20, 20, 0.3);
+    }
+
+
+    .text-banner{
+    width: 100%;
+    height: 100%;
+    height: 50%;
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: nowrap;
+    margin-bottom: 240px;
+    justify-content: center;
+    
+    
+    }
+
+
+    .a1{
+        font-family: "Roboto Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 56px;
+    color: #101010;
+    margin-left: 350px;
+    margin-top: 20px;
+    height: 45%;
+    
+
+
+    
+    }
+
+
+    .img-logo{
+        margin-top: 10px;
+        margin-left: 20px;
+        width: 120px;
+        margin-bottom: 10px;
+    
+    }
+
+        
+
+
+}
+  
+  
+
+
+
+

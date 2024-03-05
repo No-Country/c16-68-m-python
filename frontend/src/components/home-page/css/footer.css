@@ -1,0 +1,37 @@
+.contenedor-footer{
+width: 100%;
+height: 180px;
+background-color: #A0BDEB;
+display: flex;
+justify-content: start;
+flex-wrap: nowrap;
+padding: 50px 30px;
+flex-wrap: wrap;
+
+
+}
+
+.contenedor-redes{
+    width: 18%;
+    height: 70px;
+    margin-right: 20px;
+    margin-left: 30px;
+   
+
+}
+
+.div-copy{
+    width: 100%;
+    height: 40%;
+ 
+    text-align: center;
+}
+.copy{
+    font-size: 25px;
+    color: #384567;
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Roboto", sans-serif;
+    
+}
+
