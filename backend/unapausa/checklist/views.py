@@ -71,5 +71,9 @@ def user_habits(request, user_id):
         else:
             return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
     if request.method == "DELETE":
-        # TODO: delete the data from the checklist
-        pass
+        queryset = CheckList.objects.filter(user_id=user_id)
+        if queryset:
+            queryset.delete()
+            return Response({"Data was deleted"}, status=status.HTTP_200_OK)
+        else:
+            return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
