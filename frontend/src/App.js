@@ -1,22 +1,23 @@
-import './App.css';
+
+import { Toaster } from 'react-hot-toast';
+import './App.css'; 
+import RegisterForm from './components/Register/RegisterForm';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import LoginForm from './components/Login/LoginForm';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+  return ( 
+    <>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<h1>Bienvenido</h1>} />
+        <Route path='register' element={<RegisterForm/>} />
+        <Route path='login' element={<LoginForm/>} />
+      </Routes>
+      <Toaster position='top-center'/>
+    </BrowserRouter>
+    </>
   );
 }
 

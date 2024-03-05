@@ -1,7 +1,7 @@
 // Footer.jsx
 import React from 'react';
-import logo from './images/logo.png'; 
-import instagram from './images/instagram.png';
+import logo from '../images/logo.png'; 
+import instagram from '../images/instagram.png';
 const Footer = () => (
 <footer className="footer">
 <div className="footer-content">

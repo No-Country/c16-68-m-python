@@ -1,6 +1,6 @@
 // Navbar.jsx
 import React from 'react';
-import logo from './images/logo.png'; // Asegúrate de ajustar la ruta al lugar donde tengas tu imagen de logo
+import logo from '../images/logo.png'; // Asegúrate de ajustar la ruta al lugar donde tengas tu imagen de logo
 
 const Navbar = () => (
 <nav className="navbar">
