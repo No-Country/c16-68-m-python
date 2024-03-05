@@ -5,7 +5,7 @@ venv-nc/
 venv-nc/Lib
 README.md
 backend/env/
-backend/venv/
+/backend/venv/
 backend/unapausa/db.sqlite3
 backend/unapausa/accounts/__pycache__
 backend/unapausa/accounts/migrations/
