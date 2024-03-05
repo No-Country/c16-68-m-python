@@ -1,5 +1,17 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+.mypy_cache
+venv-nc/
+venv-nc/Lib
+README.md
+backend/env/
+/backend/venv/
+backend/unapausa/db.sqlite3
+backend/unapausa/accounts/__pycache__
+backend/unapausa/accounts/migrations/
+backend/unapausa/unapausa/__pycache__
+backend/unapausa/unapausa/migrations/
+
 # dependencies
 /node_modules
 /.pnp

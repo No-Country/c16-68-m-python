@@ -1,0 +1,57 @@
+import {useState} from 'react';
+import {useNavigate} from 'react-router-dom'
+import axios from 'axios'
+import Swal from 'sweetalert2'
+
+const LoginForm = () => {
+    const [email,setEmail] = useState()
+    const [password,setPassword] = useState()
+
+    const navigate = useNavigate()
+
+    const HandleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:8000/accounts/login/',{
+                "email": email,
+                "password": password
+              })
+            if(response.status === 200){
+                console.log(response.data)
+                Swal.fire({
+                    title: 'Inicio de Sesión Correctamente!',
+                    icon: 'success'
+                }).then((resp) => {
+                    if (resp.isConfirmed){
+                        navigate('/login')
+                    }
+                })
+            }
+        } catch (error) {
+            Swal.fire({
+                title:'El email o la contraseña son invalidos',
+                icon:'error'
+            })
+        }
+    }
+    return (
+        <div className="app vh-100 d-flex flex-column justify-content-center align-items-center">
+            <div className='bg-white rounded-3 gap-3 d-flex flex-column justify-content-center align-items-center p-4' style={{ width: '536px', minHeight: '287px' }}>
+                <h3 className='text-center'>Inicio de Sesión</h3>
+                <form className='w-75' onSubmit={HandleSubmit}>
+                    <div className="mb-3">
+                        <label htmlFor="email" className="form-label">Email</label>
+                        <input type="email" className="form-control" placeholder='Ingresa su email' required id="email" onChange={(e) => { setEmail(e.target.value) }} />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="password" className="form-label">Contraseña</label>
+                        <input type="password" className="form-control" placeholder='Ingresa su contraseña' required id="password" onChange={(e) => { setPassword(e.target.value) }} />
+                    </div>
+                    <button type="submit" className="btn w-100" style={{ backgroundColor: '#20C95D' }}>Inicia Sesión</button>
+                </form>
+            </div>
+        </div>
+    );
+}
+ 
+export default LoginForm;
