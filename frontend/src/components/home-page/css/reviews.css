@@ -1,0 +1,423 @@
+.section-4{
+    background-color: #FFF0BF;
+    width:100% ;
+    height:450px;
+
+}
+
+
+.title-rev{
+    width: 100%;
+    height: 50%;
+    color: #101010;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:30px;
+    margin-bottom: 20px;
+    margin-left: 75px;
+}
+
+
+.reviews{
+    height: 70%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 90px;
+    width: 100%;
+    align-items: center;
+}
+
+
+.rev-1 , .rev-2, .rev-3{
+    width: 25%;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+
+.header-rev{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+   
+}
+
+.img-rev{
+    width: 30%;
+    height: 120%;
+    margin-right: 10px;
+}
+
+.img-user{
+    width: 80px;
+    height: 80px;
+}
+
+.name{
+    width: 70%;
+    height: 100%;
+}
+
+.name-user{
+    font-family: "Neucha", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    color: #101010;
+    margin-top: 20px;
+}
+
+.review{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.text-review{
+    color: #101010;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:18px;
+}
+
+
+
+@media only screen and  (min-width:300px) and (max-width: 519px){
+/*ok*/
+    .rev-2{
+        display:none
+    }
+    
+    .rev-3{
+        display:none
+    }
+
+    .rev-1{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-wrap: wrap;
+     
+     }
+    
+
+    .section-4{
+        display:flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 40%;
+       
+    }
+   
+
+    .reviews{
+        height: 100%;
+        display: flex;
+        width: 100%;
+    }
+
+    .title-rev{
+      width: 100%;
+      height: 60%;
+      margin: 20px 25px;
+      font-size:  4vh; 
+      margin-top: 20px;
+      font-weight: 400;
+      
+    }
+
+   
+
+    .img-rev{
+        width: 25%;
+        height: 120%;
+        text-align: center;
+        margin-left: 3vw;
+    }
+
+    .header-rev{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: 10px;
+      
+    }
+
+
+    .name{
+      width: 70%;
+      height: 100%;
+     }
+
+    .img-user{
+        width: 20vw;
+        height: 15vh;
+    }
+
+    .name-user{
+        font-size: 7vw;
+    
+    }
+
+    .text-review{
+        font-size: 4vw;
+    }
+
+    .review{
+        width: 90%;
+        height: 60%;
+        margin: 0 auto 40px;
+    }
+
+}
+
+    @media only screen and  (min-width:520px) and (max-width: 749px){
+        /*OK*/
+        
+        .rev-2{
+            display:none
+        }
+
+        .rev-3{
+            display:none
+        }
+    
+        .rev-1{
+            width: 90%;
+            height: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            
+        
+        }
+       
+        .section-4{
+            display:flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 40%;
+            
+        }
+
+        .reviews{
+            height: 100%;
+            display: flex;
+            width: 100%;
+          }
+    
+        .title-rev{
+          width: 100%;
+          height: 50%;
+          margin: 30px 60px;
+          font-size:  6vh;
+         
+        }
+    
+        .img-rev{
+            width: 25%;
+            height: 120%;
+            text-align: center;
+            margin-left: 2vw;
+        }
+    
+        .header-rev{
+            width: 100%;
+            height: 30%;
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: 10px;
+          
+        }
+    
+    
+        
+    .name{
+        width: 70%;
+        height: 100%;
+        margin-right: 4vw;
+    }
+    
+    .img-user{
+        width: 18vw;
+        height: 18vh;
+    }
+    
+    .name-user{
+        font-size: 5.5vw;
+       
+    }
+    
+    .text-review{
+        font-size:3.5vw;
+    }
+    
+    .review{
+        width: 90%;
+        height: 60%;
+        margin: 0 auto 40px;
+    }
+    
+
+    }
+
+    @media only screen and  (min-width:750px) and (max-width:991px){
+    /*OK*/ 
+        
+        .section-4{
+            display:flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 50%;
+        }
+
+
+        .reviews{
+            height: 100%;
+            display: flex;
+            width: 90%;
+            margin: 0 auto 30px auto;
+        }
+        
+        .rev-2{
+            display: none;
+        }
+        
+        .rev-1, .rev-3{
+            width: 50%;
+            height: 60%;
+            display: flex;
+            flex-wrap: wrap;
+         }
+
+        .name-user{
+            font-size: 3vw;
+           
+        }
+        
+        .text-review{
+            font-size: 2vw;
+        }
+
+            
+        
+        .name{
+            width: 70%;
+            height: 100%;
+        }
+
+        .img-rev{
+            width: 25%;
+            height: 120%;
+            text-align: center;
+            margin-left: 1vw;
+        }
+
+        .header-rev{
+            width: 100%;
+            height: 30%;
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: 10px;
+        }
+
+        .img-user{
+            width: 10vw;
+            height: 12vh;
+        }
+        
+        .title-rev{
+            width: 100%;
+            height: 50%;
+            margin: 0 40px 40px;
+            font-size:  6vh;
+        }
+
+       
+
+    }
+
+    @media only screen and  (min-width:992px) and (max-width:1240px){
+     
+        .section-4{
+            display:flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 50%;
+        }
+
+
+        .reviews{
+            height: 100%;
+            display: flex;
+            width: 90%;
+            margin: 0 auto 40px auto;
+        }
+        
+        .rev-3{
+            display: none;
+        }
+        
+        .rev-1, .rev-2{
+            width: 50%;
+            height: 60%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .name-user{
+            font-size: 3vw;
+           
+        }
+        
+        .text-review{
+            font-size: 2vw;
+        }
+
+            
+        
+        .name{
+            width: 70%;
+            height: 100%;
+        }
+
+        .img-rev{
+            width: 25%;
+            height: 120%;
+            text-align: center;
+            margin-left:0;
+        }
+
+        .header-rev{
+            width: 100%;
+            height: 30%;
+            display: flex;
+            flex-wrap: nowrap;
+            margin-bottom: 10px;
+        }
+
+        .img-user{
+            width: 10vw;
+            height: 13vh;
+        }
+        
+        .title-rev{
+            width: 100%;
+            height: 50%;
+            margin: 0 50px 40px;
+            font-size:  6vh;
+        }
+
+
+
+
+    }
+
+
+
