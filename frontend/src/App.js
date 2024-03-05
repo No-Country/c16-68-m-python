@@ -13,7 +13,6 @@ function App() {
         <Route path='register' element={<RegisterForm/>} />
         <Route path='login' element={<LoginForm/>} />
       </Routes>
-      <Toaster position='top-center'/>
     </BrowserRouter>
     </>
   );

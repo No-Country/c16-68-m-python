@@ -24,7 +24,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include('accounts.urls')),
     path("emotion/", include('logEmotion.urls')),
-
 ]
 
 # This ts the config to show img when user clicks on the url
