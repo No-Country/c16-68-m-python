@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt.token_blacklist",
     "corsheaders",
     "accounts",
+    "logEmotion",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
