@@ -85,8 +85,10 @@ class CheckList(models.Model):
     user_id = models.ForeignKey("unapausa.User", on_delete=models.CASCADE)
     habit_id = models.ForeignKey(HealthyHabit, on_delete=models.CASCADE)
     date_joined = models.DateField()
-    when_was_done = models.DateField(null=True)
+    when_was_done = models.DateField(null=True, blank=True)
     is_done = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.habit_id.habit_name}/ {self.date_joined}/ is_done: {self.is_done}"
+        return (
+            f"{self.habit_id.habit_name}/ {self.date_joined}/ is_done: {self.is_done}"
+        )
