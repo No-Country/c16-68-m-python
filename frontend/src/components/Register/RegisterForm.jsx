@@ -2,6 +2,7 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const RegisterForm = () => {
     const [username,setUsername] = useState()
@@ -55,8 +56,9 @@ const RegisterForm = () => {
                         <label htmlFor="password" className="form-label">Contraseña</label>
                         <input type="password" className="form-control" placeholder='Ingresa una contraseña' required id="password" onChange={(e) => { setPassword(e.target.value) }} />
                     </div>
-                    <button type="submit" className="btn w-100" style={{ backgroundColor: '#20C95D' }}>Registrarse</button>
+                    <button type="submit" className="btn mt-3 w-100" style={{ backgroundColor: '#20C95D' }}>Registrarse</button>
                 </form>
+                <p><a role='button' className='link' onClick={() => navigate('/login')}>¿Ya tienes cuenta?</a></p>
             </div>
         </div>
     );

@@ -2,6 +2,7 @@
 import React from 'react';
 import ResourceItem from './ResourceItem';
 import { useState } from 'react';
+import './css/RecursosBienestar.css'
 
 import stres from './images/stres.png'
 import meditar from './images/meditar.png'

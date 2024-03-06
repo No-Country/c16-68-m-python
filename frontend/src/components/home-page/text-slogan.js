@@ -1,8 +1,15 @@
 import React from "react";
 import "./css/text-slogan.css";
 import woman from "./image/young-woman-meditating-nature 1.png";
+import { useNavigate } from "react-router-dom";
+
+
 
 function TextSlogan() {
+
+  const isLogged = localStorage.getItem('token') !== undefined
+  const navigate = useNavigate()
+
   return (
     <>
       <div className="section-1">
@@ -23,7 +30,9 @@ function TextSlogan() {
             </p>
           </div>
           <div className="div-btn">
-            <button className="btn-c">Comenza ahora</button>
+            {
+              isLogged ? <></> : <button className="btn-c" onClick={() => navigate('/register')}>Comenza ahora</button>
+            }
           </div>
         </div>
         <div className="conteiner-person">

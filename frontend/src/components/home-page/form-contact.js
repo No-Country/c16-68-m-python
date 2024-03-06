@@ -5,7 +5,7 @@ import "./css/button.css"
 
 function FormContact() {
   return (
-    <div className="section-3">
+    <div className="section-3" id="contacto">
       <div className="title-contact">
         <h1>¿Tenes alguna sugerencia? ¡Comunícate con nosotros!</h1>
       </div>

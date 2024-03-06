@@ -8,12 +8,14 @@ import picplan2 from "./image/pic-plan2.png";
 import picplan3 from "./image/pic-plan3.png";
 import "./css/menu.css";
 import "./css/button.css";
+import Hero from './Hero'
 
 function MainComponent() {
   return (
     <main>
+    <Hero></Hero>
     <TextSlogan />
-      <div className="section-2">
+      <div className="section-2" id="recursos">
         <div className="container-cards">
           <Cards
             className="margin-t"

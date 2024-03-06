@@ -1,14 +1,13 @@
-import {useState, useContext} from 'react';
+import {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import AuthContext from 'context/AuthProvider';
+import 'bootstrap/dist/css/bootstrap.css'
 
 const LoginForm = () => {
     const [email,setEmail] = useState()
     const [password,setPassword] = useState()
 
-    const {setAuth} = useContext(AuthContext)
 
     const navigate = useNavigate()
 
@@ -20,15 +19,18 @@ const LoginForm = () => {
                 "password": password
               })
             if(response.status === 200){
-                console.log(response.data)
+                
                 const accesstoken = response?.data?.access_token
-                setAuth({email,password,accesstoken})
+                
+                //Guardamos en accesstoken en el localstorage
+                localStorage.setItem('token',accesstoken)
+
                 Swal.fire({
-                    title: 'Inicio de Sesión Correctamente!',
+                    title: 'Inicio de Sesión Exitoso!',
                     icon: 'success'
                 }).then((resp) => {
                     if (resp.isConfirmed){
-                        navigate('/login')
+                        navigate('/dashboard')
                     }
                 })
             }
@@ -63,11 +65,11 @@ const LoginForm = () => {
                 <form className='w-75' onSubmit={HandleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email</label>
-                        <input type="email" className="form-control" placeholder='Ingresa su email' required id="email" onChange={(e) => { setEmail(e.target.value) }} />
+                        <input type="email" className="form-control" placeholder='Ingrese su email' required id="email" onChange={(e) => { setEmail(e.target.value) }} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="password" className="form-label">Contraseña</label>
-                        <input type="password" className="form-control" placeholder='Ingresa su contraseña' required id="password" onChange={(e) => { setPassword(e.target.value) }} />
+                        <input type="password" className="form-control" placeholder='Ingrese su contraseña' required id="password" onChange={(e) => { setPassword(e.target.value) }} />
                     </div>
                     <button type="submit" className="btn w-100" style={{ backgroundColor: '#20C95D' }}>Inicia Sesión</button>
                 </form>

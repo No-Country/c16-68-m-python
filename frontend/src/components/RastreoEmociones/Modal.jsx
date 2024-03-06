@@ -1,6 +1,6 @@
 import './css/modal.css'
 import { useContext, useState } from 'react';
-import {EmocionesContext} from 'context/RastreoEmociones.context'
+import {EmocionesContext} from 'context/Emociones.context'
 
 const Modal = ({onClose}) => {
     

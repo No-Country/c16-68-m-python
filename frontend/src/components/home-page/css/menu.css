@@ -15,7 +15,10 @@
 } 
 
 .img-logo{
+    margin-top: 10px;
+    margin-left: 20px;
     width: 120px;
+    margin-bottom: 10px;
     object-fit: contain;
 }
 
@@ -404,13 +407,11 @@ header label{
     }
 
     .menu a:hover{
-        background: rgba(#7e380aba); ;
+        background: rgba(#7e380aba);
         transform: scale(1.2) ;
         transition: all 0.8s ease;
         color:#FCDC51;
         text-shadow: 1px 1px 2px black;
-     
-     
     }
 
     .menu .btn{
@@ -419,7 +420,6 @@ header label{
         font-style: normal;
         font-size: 20px;
         font-family: "Roboto", sans-serif;
-        width: 20%;
         text-align: center;
         margin-top: 15px;
         padding: 12px 15px;

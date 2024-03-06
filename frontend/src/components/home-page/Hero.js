@@ -1,3 +1,5 @@
+import './css/menu.css'
+
 const Hero = () => {
     return (
         <section className='container'>

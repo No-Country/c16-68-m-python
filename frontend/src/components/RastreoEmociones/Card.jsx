@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createPortal } from 'react-dom';
-import { EmocionesContext } from 'context/RastreoEmociones.context';
+import { EmocionesContext } from 'context/Emociones.context';
 import Modal from './Modal'
 import './css/card.css'
 

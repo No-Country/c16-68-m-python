@@ -3,7 +3,7 @@ import "./css/cards.css";
 
 function Cards(props) {
   return (
-    <div className="card">
+    <div className="card" onClick={props.onClick}>
       <div className="img-card">
         <img src={props.img} className="img-card" alt="imagen plan" />
       </div>

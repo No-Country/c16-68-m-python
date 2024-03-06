@@ -1,0 +1,30 @@
+/* Card */
+.card-bienestar {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #84DAA3;
+  text-align: center;
+}
+
+.resources-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.resource-item {
+  width: 300px; 
+  margin: 10px; 
+}
+
+.title {
+  color: #004AC3;
+}
+
+/* Imagen en la card */
+.resource-image {
+  width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+  border-radius: 4px; /* Bordes redondeados */
+  margin-bottom: 10px; /* Espaciado inferior */
+}

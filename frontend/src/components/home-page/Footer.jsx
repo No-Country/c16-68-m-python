@@ -2,6 +2,7 @@
 import React from 'react';
 import logo from './image/LogoBrain-redim.png'; 
 import instagram from './image/instagram.png';
+import './css/footer.css'
 
 const Footer = () => {
     return(
