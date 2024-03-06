@@ -1,11 +1,14 @@
-import {useState} from 'react';
+import {useState, useContext} from 'react';
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import AuthContext from 'context/AuthProvider';
 
 const LoginForm = () => {
     const [email,setEmail] = useState()
     const [password,setPassword] = useState()
+
+    const {setAuth} = useContext(AuthContext)
 
     const navigate = useNavigate()
 
@@ -18,6 +21,8 @@ const LoginForm = () => {
               })
             if(response.status === 200){
                 console.log(response.data)
+                const accesstoken = response?.data?.access_token
+                setAuth({email,password,accesstoken})
                 Swal.fire({
                     title: 'Inicio de Sesión Correctamente!',
                     icon: 'success'
@@ -28,10 +33,27 @@ const LoginForm = () => {
                 })
             }
         } catch (error) {
-            Swal.fire({
-                title:'El email o la contraseña son invalidos',
-                icon:'error'
-            })
+            if(!error?.response){
+                Swal.fire({
+                    title:'El servidor no responde',
+                    icon:'error'
+                })
+            }else if(error.response?.status === 400){
+                Swal.fire({
+                    title:'El email o la contraseña son invalidos',
+                    icon:'error'
+                })
+            }else if(error.response?.status === 401){
+                Swal.fire({
+                    title:'No autorizado',
+                    icon:'error'
+                })
+            }else{
+                Swal.fire({
+                    title:'El Inicio de Sesón Fallo',
+                    icon:'error'
+                })
+            }
         }
     }
     return (

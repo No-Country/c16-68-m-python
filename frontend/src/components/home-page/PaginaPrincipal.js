@@ -1,19 +1,23 @@
 import React from 'react'; 
 import HeaderComponent from './HeaderComponent';
 import MainComponent from './MainComponent';
+import Hero from './Hero'
+import Footer from './Footer';
 
 
 
 
-
-function PaginaPrincipal() {
+function PaginaPrincipal({children}) {
 
     return (
       
         <>  
             <div className="b-content">
             <HeaderComponent/>
-            <MainComponent/></div>
+            <Hero></Hero>
+                {<MainComponent/> || children}
+            <Footer></Footer>
+            </div>
            
         </>
        
