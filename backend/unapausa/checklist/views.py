@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from unapausa.models import CheckList, HealthyHabit
 from rest_framework.exceptions import status
 from .serializers import HabitsListSerializer, CheckListSerializer
+from copy import deepcopy
 
 
 @api_view(["GET"])
@@ -20,13 +21,15 @@ def get_habits(request):
 
 
 @api_view(["GET", "POST", "PUT", "DELETE"])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def user_habits(request, user_id):
     """
     This view recieve a url parameter, get that in mind.
     GET: get the list of the user, if there's no list for this user return a 404 code, otherwise
     return all the list from this users
     POST: Save the data into the db, if there already data from the same habit and the same data, i won't be saved and return an error.
+    PUT: it checks if the id of the checklist if in the data, make the query to find the data, and make a replacement for the when_was_done and is_done fields
+    DELETE: Takes the id, search for it and if exits, delete the data and returns the deleted data
     """
     if request.method == "GET":
         queryset = CheckList.objects.filter(user_id=user_id)
@@ -39,10 +42,9 @@ def user_habits(request, user_id):
                 status=status.HTTP_404_NOT_FOUND,
             )
     if request.method == "POST":
-        print("IN POST")
-        s = CheckListSerializer(
-            data=request.data
-        )  # Create a Serializer and pass the data
+        data_copy = deepcopy(request.data)
+        s = CheckListSerializer(data=data_copy)  # Create a Serializer and pass the data
+        print(request.data)
         if s.is_valid():  # To know if all the fields are correct
             isthereany = CheckList.objects.filter(
                 user_id=user_id,
@@ -53,13 +55,15 @@ def user_habits(request, user_id):
                 return Response(
                     {"This data already exists"}, status=status.HTTP_409_CONFLICT
                 )
-            s.save()  # Save to the db
-            return Response(s.data, status=status.HTTP_200_OK)
+            try:
+                s.save()  # Save to the db
+            except Exception as e:
+                return Response({str(e)}, status=status.HTTP_503_SERVICE_UNAVAILABLE)
+            else:
+                return Response(s.data, status=status.HTTP_200_OK)
         else:
             return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
     if request.method == "PUT":
-        # TODO: Check if this method work correctly
-        # s = CheckListSerializer(data=request.data)
         if request.data.get("id"):
             try:
                 queryset = CheckList.objects.get(
@@ -68,18 +72,17 @@ def user_habits(request, user_id):
             except CheckList.DoesNotExist:
                 return Response({"Data not found"}, status=status.HTTP)
             else:
-                s2 = CheckListSerializer(queryset, data=request.data, partial=True)
-                if s2.is_valid():
-                    s2.save()
+                s = CheckListSerializer(queryset, data=request.data, partial=True)
+                if s.is_valid():
+                    s.save()
                     return Response(
-                        {"The data was updated": s2.data}, status=status.HTTP_200_OK
+                        {"The data was updated": s.data}, status=status.HTTP_200_OK
                     )
                 else:
                     return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
         else:
-            return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"invalid Data"}, status=status.HTTP_400_BAD_REQUEST)
     if request.method == "DELETE":
-        # TODO: delete the data from the checklist
         s = CheckListSerializer(data=request.data)
         if s.is_valid() and request.data.get("id"):
             try:
@@ -94,4 +97,3 @@ def user_habits(request, user_id):
                     {"Data was deleted": CheckListSerializer(queryset).data},
                     status=status.HTTP_200_OK,
                 )
-
