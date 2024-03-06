@@ -15,11 +15,9 @@ habits = [
 
 @receiver(post_migrate)
 def populate_habit_table(sender, **kwargs):
-    print("SENAL POSTMIGRATEE")
-    if sender.name == "checklist":
-        if not HealthyHabit.objects.exists():
-            for habit in habits:
-                HealthyHabit.objects.create(
-                    habit_name=habit.split(",")[0].strip(),
-                    description=habit.split(",")[1].strip(),
-                )
+    if not HealthyHabit.objects.exists():
+        for habit in habits:
+            HealthyHabit.objects.create(
+                habit_name=habit.split(",")[0].strip(),
+                description=habit.split(",")[1].strip(),
+            )
