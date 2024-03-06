@@ -1,8 +1,21 @@
 <h1 align="center">¡Hola a todos! Somos el Team<br> c16-68-m-python!</h1>
 
-###
+<div align="center">
+  <a href="https://github.com/github_username/repo_name">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-<p align="center">Estamos emocionados de presentarles 'Una Pausa'. Esta es más que una aplicación; es tu compañero para el bienestar. Rastrea emociones, recibe recordatorios para hábitos saludables y accede a recursos de bienestar, todo en una aplicación amigable. Prioriza tu salud con Una Pausa. ¡Vamos juntos en este viaje hacia el bienestar</p>
+<h3 align="center">Una Pausa</h3>
+
+  <p align="center">
+    Estamos emocionados de presentarles 'Una Pausa'. Esta es más que una aplicación; es tu compañero para el bienestar. Rastrea emociones, recibe recordatorios para hábitos saludables y accede a recursos de bienestar, todo en una aplicación amigable. Prioriza tu salud con Una Pausa. ¡Vamos juntos en este viaje hacia el bienestar
+    <br />
+    <a href="https://github.com/No-Country/c16-68-m-python"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/No-Country/c16-68-m-python">View Demo</a>
+  </p>
+</div>
 
 ###
 
