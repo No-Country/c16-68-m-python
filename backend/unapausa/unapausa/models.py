@@ -51,23 +51,36 @@ class User(AbstractUser):
 
 class Emotions(models.Model):
 
-    name = models.CharField(max_length=15)
-    # I added this route just for convention, but i think it can be improved.
-    img_emotion = models.ImageField(upload_to="backend/files/staticfiles/emotions")
+    EMOTIONS = [
+        ("Tristeza", "Tristeza"),
+        ("Miedo", "Miedo"),
+        ("Ira", "Ira"),
+        ("Calma", "Calma"),
+        ("Alegria", "Alegria"),
+    ]
+
+    name = models.CharField(max_length=15, choices=EMOTIONS)
+    # se ignorara el campo de imagenes ya que se habia hablado que las imagenes las guarde el front
+    # img_emotion = models.ImageField(upload_to="backend/files/staticfiles/emotions")
 
     def __str__(self):
         return self.name
 
+    """ @classmethod
+    def initialize_emotions(cls):
+        for emotion_name, _ in cls.EMOTIONS:
+            cls.objects.get_or_create(name=emotion_name) """
+
 
 class EmotionsLog(models.Model):
-    # Relacion de uno a muchos hecha automaticamente al crear el obj ForeignKey.
-    # on_delete=models.CASCADE significa que si el usuario es borrado del sistema, sus datos en esta tabla tambien se borraran
-    user_id = models.ForeignKey(
-        "unapausa.User", on_delete=models.CASCADE
-    )  # When refers to the User class. it has to be the value of AUTH_USER_MODEL tha is "unapausa.User" of settings module.
-    date_joined = models.DateField(unique=True)
-    emotion_id = models.ForeignKey(Emotions, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    date_joined = models.DateField(auto_now_add=True)
+    emotion = models.ForeignKey(Emotions, on_delete=models.CASCADE)
     description = models.TextField()
+    count = models.IntegerField(default=1)
+
+    class Meta:
+        unique_together = ("user", "emotion")
 
     def __str__(self):
         return f"{self.emotion_id.name}/ {self.date_joined} "

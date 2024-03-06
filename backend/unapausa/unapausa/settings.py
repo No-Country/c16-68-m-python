@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "accounts",
     "checklist",
+    "logEmotion",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
