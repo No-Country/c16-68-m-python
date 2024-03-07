@@ -5,6 +5,7 @@ import LoginForm from './components/Login/LoginForm';
 import RastreoEmociones from './pages/RastreoEmociones';
 import PaginaPrincipal from 'components/home-page/PaginaPrincipal';
 import RecursosBienestar from 'components/RecursosBienestar/RecursosBienestar';
+import {TaskPage} from './pages/TaskPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
 
         <Route path='emotions' element={<RastreoEmociones></RastreoEmociones>}></Route>
         <Route path='recursos/bienestar' element={<RecursosBienestar></RecursosBienestar>}></Route>
+        <Route path='tasklist' element={<TaskPage />}></Route>
       </Routes>
     </BrowserRouter>
     </>
