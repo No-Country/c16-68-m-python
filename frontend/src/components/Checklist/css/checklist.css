@@ -1,0 +1,71 @@
+.nav-options{
+    width: 100%;
+    height: 20%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.create-ls{
+    display: inline;
+    margin: 50px;
+}
+
+.mybtn{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 6%;
+    border: #101010 0.5px solid;
+    background-color: #84DAA3;
+    border-color: #101010;
+    color:#101010;
+    transition: transform 0.3s ease; 
+
+}
+.mybtn:active {
+    background-color: white;
+
+}
+.mybtn:hover {
+    background-color: #84DAA3;
+    color:#101010;
+    border-color: #101010;
+    transform: scale(1.1);
+
+}
+
+/* .btn-expand {
+    padding: 10px 20px;
+    transition: transform 0.2s ease;
+}
+
+.btn-expand:hover {
+    transform: scale(1.1);
+} */
+
+.card{
+    background-color: #A0BDEB;
+}
+
+.list-card{
+    width: fit-content;
+    max-width: 400px; /* Establece un límite máximo */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 0px;
+    height: fit-content;
+
+}
+
+#wrapperContenet{
+    /* text-align: center; */
+}
+
+#tasklist{
+    padding: 30%;
+    text-align: center;
+    display: block;
+}
+
+.todoWrapper{
+    text-align: center;
+    display: block;
+}

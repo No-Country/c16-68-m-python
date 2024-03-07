@@ -1,5 +1,6 @@
 import React from 'react'
-import './css/todoNav.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import './css/checklist.css';
 
 
 export const TodoNav = () =>{
@@ -10,10 +11,10 @@ export const TodoNav = () =>{
     return (
         <div id="TodoNav" className='nav-options'>
             <div className='create-ls'>
-                <button className='btn btn-primary'>Crea una lista</button>
+                <button className='mybtn'>Crea una lista</button>
             </div>
             <div className='create-ls'> 
-                <button onClick={createForm} className='btn btn-primary'>Lista de hoy</button>
+                <button onClick={createForm} className='mybtn'>Lista de hoy</button>
             </div>
         </div>
     )

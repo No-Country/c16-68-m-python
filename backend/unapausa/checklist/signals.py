@@ -18,6 +18,6 @@ def populate_habit_table(sender, **kwargs):
     if not HealthyHabit.objects.exists():
         for habit in habits:
             HealthyHabit.objects.create(
-                habit_name=habit.split(",")[0].strip(),
-                description=habit.split(",")[1].strip(),
+                habit_name=habit.split("|")[0].strip(),
+                description=habit.split("|")[1].strip(),
             )

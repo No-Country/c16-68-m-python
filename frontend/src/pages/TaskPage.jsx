@@ -40,8 +40,11 @@ export const TaskPage = () =>{
         <div id="TaskPage" style={{width:"100%", height:"100%"}}>
             <TodoWrapper>
                 <TodoNav/>
-                {/* <WrapperContent habitslist={<Tasklist data={habits}/>}/> */}
-                <Tasklist data={habits}/>
+                <WrapperContent>
+                    {console.log(<Tasklist data={habits.map}/>)}
+                    {/* <Tasklist data={habits}/> */}
+                </WrapperContent>
+                {/* <Tasklist data={habits}/> */}
             </TodoWrapper>
         </div>
     )   
