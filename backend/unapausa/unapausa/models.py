@@ -54,13 +54,14 @@ class Emotions(models.Model):
         ("Tristeza", "Tristeza"),
         ("Miedo", "Miedo"),
         ("Ira", "Ira"),
-        ("Calma", "Calma"),
+        ("Sorpresa", "Sorpresa"),
         ("Alegria", "Alegria"),
+        ("Amor","Amor")
     ]
 
     name = models.CharField(max_length=15, choices=EMOTIONS)
     # se ignorara el campo de imagenes ya que se habia hablado que las imagenes las guarde el front
-    # img_emotion = models.ImageField(upload_to="backend/files/staticfiles/emotions")
+    img_emotion = models.ImageField(upload_to="emotions", null=False)
 
     def __str__(self):
         return self.name

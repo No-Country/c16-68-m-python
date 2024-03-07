@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
 class EmotionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Emotions
-        fields = ['name']
+        fields = ['name','img_emotion']
 
 class EmotionLogSerializer(serializers.ModelSerializer):
     user = UserSerializer(read_only=True)

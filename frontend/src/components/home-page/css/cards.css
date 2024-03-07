@@ -18,7 +18,7 @@
 }
 
 
-.card{
+#card{
      display: flex;
      min-height: 450px;
      width: 350px;
@@ -57,7 +57,7 @@
    
  }
 
- .card:hover{
+ #card:hover{
     cursor: auto;
     transform: scale(1.05) ;
     transition: all 1s ease;
@@ -87,7 +87,7 @@
         overflow: hidden;
      }
 
-    .card{
+    #card{
          display: flex;
          height: 400px;
          width: 270px;
@@ -163,7 +163,7 @@
    
     
     
-    .card{
+    #card{
         display: flex;
         height: 350px;
         width: 30%;
@@ -226,7 +226,7 @@
     
      
      
- .card{
+ #card{
      display: flex;
      height: 420px;
      width: 30%;
@@ -292,7 +292,7 @@
     
      
      
- .card{
+ #card{
      display: flex;
      height: 490px;
      width: 28%;

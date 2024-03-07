@@ -1,19 +1,27 @@
-import React from 'react'; 
+import React, { useEffect, useState } from 'react'; 
 import logo from './image/LogoBrain-redim.png';
 import './css/menu.css';
 import menu from './image/menu-hamburguesa.png';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useAuth } from 'context/AuthContext';
 
 
 function Navbar() {
   
   const location = useLocation()
-
   const isIndexPage = location.pathname === '/'
-  const isLogged = localStorage.getItem('token') !== undefined
+  
+  const {isLoggIn, setIsLoggIn} = useAuth()
 
   const navigate = useNavigate()
 
+  const LogOut = (e) => {
+    e.preventDefault();
+    setIsLoggIn(false);
+    localStorage.clear();
+    navigate('/')
+  }
+  
   return (
    <> 
 
@@ -33,13 +41,11 @@ function Navbar() {
             </> : <></>
         }
         {
-          isLogged ? 
+          isLoggIn ? 
           <>
             <a role='button' onClick={() => navigate('/dashboard')}>Dashboard</a>
-            <a role='button' onClick={() => {localStorage.clear();navigate('/')}}>Logout</a>
-          </>
-           : 
-          <>
+            <a role='button' onClick={(e) => LogOut(e)}>Logout</a>
+          </> : <>
             <a onClick={() => navigate('/login')} className="btn margin-right  back-neutral margin-left">Ingresar</a>
             <a onClick={() => navigate('/register')} className="btn  margin-right" >Registrarse</a>
           </>

@@ -3,11 +3,13 @@ import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import 'bootstrap/dist/css/bootstrap.css'
+import { useAuth } from 'context/AuthContext';
 
 const LoginForm = () => {
     const [email,setEmail] = useState()
     const [password,setPassword] = useState()
 
+    const {setIsLoggIn,setAuthToken} = useAuth()
 
     const navigate = useNavigate()
 
@@ -22,8 +24,9 @@ const LoginForm = () => {
                 
                 const accesstoken = response?.data?.access_token
                 
-                //Guardamos en accesstoken en el localstorage
-                localStorage.setItem('token',accesstoken)
+                //Guardamos en accesstoken en el AuthContext
+                setAuthToken(accesstoken)
+                setIsLoggIn(true)
 
                 Swal.fire({
                     title: 'Inicio de Sesión Exitoso!',

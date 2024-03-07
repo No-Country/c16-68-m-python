@@ -6,7 +6,8 @@ import './css/card.css'
 
 const Card = ({title,current_date,emotions}) => {
 
-    const [showModal, setShowModal] = useState(false);
+    const [showModal,setShowModal] = useState()
+
     const [emotion,SetEmocion] = useState(null)
     
     return (
@@ -26,19 +27,16 @@ const Card = ({title,current_date,emotions}) => {
                                 img_url : element.target.src
                             })
                         }}>
-                            <img className={emotion.nombre} src={emotion.img_emocion} alt="frame"/>
+                            <img className={emotion.name} src={'http://127.0.0.1:8000/'+emotion.img_emotion} alt="frame"/>
                         </li>
-                        
                     ))
                 }
             </ul>
             <EmocionesContext.Provider value={emotion}>
-            {
-                showModal && createPortal(
+                {showModal && createPortal(
                     <Modal onClose={() => setShowModal(false)}></Modal>
                     , document.getElementById('portal')
-                )
-            }
+                )}
             </EmocionesContext.Provider>
         </div>
     );

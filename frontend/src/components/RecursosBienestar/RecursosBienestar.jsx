@@ -1,7 +1,6 @@
 // RecursosBienestar.jsx
 import React from 'react';
 import ResourceItem from './ResourceItem';
-import { useState } from 'react';
 import './css/RecursosBienestar.css'
 
 import stres from './images/stres.png'
@@ -10,7 +9,7 @@ import dormir from './images/dormir.png'
 import relajacion from './images/relajacion.png'
 
 const RecursosBienestar = () => {
-    const [resources] = useState([
+    const resources = [
         {
           title: 'Cómo Manejar el Estrés',
           description: 'Consejos prácticos para manejar el estrés en la vida diaria.',
@@ -34,14 +33,16 @@ const RecursosBienestar = () => {
           description: 'Descubre hábitos y consejos para mejorar la calidad del sueño.',
           link: 'https://l1nk.dev/rFoOw',
           image: dormir, 
-        },
-      ]);
+        }
+      ];
 
     return (
     <div className="resources-container">
-        {resources.map((resource, index) => (
-        <ResourceItem key={index} {...resource} />
-        ))}
+        {
+          resources.map((resource, index) => (
+            <ResourceItem key={index} {...resource} />
+          ))
+        }
     </div>
     );
 };

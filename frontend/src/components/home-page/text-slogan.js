@@ -2,12 +2,11 @@ import React from "react";
 import "./css/text-slogan.css";
 import woman from "./image/young-woman-meditating-nature 1.png";
 import { useNavigate } from "react-router-dom";
-
+import { useAuth } from "context/AuthContext";
 
 
 function TextSlogan() {
-
-  const isLogged = localStorage.getItem('token') !== undefined
+  const {isLoggIn} = useAuth()
   const navigate = useNavigate()
 
   return (
@@ -31,7 +30,7 @@ function TextSlogan() {
           </div>
           <div className="div-btn">
             {
-              isLogged ? <></> : <button className="btn-c" onClick={() => navigate('/register')}>Comenza ahora</button>
+              isLoggIn ? <></> : <button className="btn-c" onClick={() => navigate('/register')}>Comenza ahora</button>
             }
           </div>
         </div>
