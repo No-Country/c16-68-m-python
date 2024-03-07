@@ -9,7 +9,7 @@ from copy import deepcopy
 
 
 @api_view(["GET"])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def get_habits(request):
     """
     This view return the habit list. At first make a query to get all habits, it pass through the serializer to convert this query set to json
