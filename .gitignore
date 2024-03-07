@@ -12,7 +12,11 @@ backend/unapausa/unapausa/migrations/
 backend/unapausa/checklist/__pycache__
 backend/unapausa/checklist/migrations
 backend/unapausa/logEmotion/__pycache__
+<<<<<<< HEAD
 .gitignore/
+=======
+
+>>>>>>> pre-dev-backend
 # Compiled source #
 ###################
 *.com
