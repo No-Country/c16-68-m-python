@@ -63,6 +63,26 @@ def user_habits(request, user_id):
                 return Response(s.data, status=status.HTTP_200_OK)
         else:
             return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
+    # if request.method == "PUT":
+    #     if request.data.get("id"):
+    #         try:
+    #             queryset = CheckList.objects.get(
+    #                 pk=request.data["id"],
+    #             )
+    #         except CheckList.DoesNotExist:
+    #             return Response({"Data not found"}, status=status.HTTP)
+    #         else:
+    #             s = CheckListSerializer(queryset, data=request.data, partial=True)
+    #             if s.is_valid():
+    #                 s.save()
+    #                 return Response(
+    #                     {"The data was updated": s.data}, status=status.HTTP_200_OK
+    #                 )
+    #             else:
+    #                 return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
+    #     else:
+    #         return Response({"invalid Data"}, status=status.HTTP_400_BAD_REQUEST)
+        
     if request.method == "PUT":
         if request.data.get("id"):
             try:
@@ -82,6 +102,10 @@ def user_habits(request, user_id):
                     return Response(s.errors, status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response({"invalid Data"}, status=status.HTTP_400_BAD_REQUEST)
+
+        
+        
+        
     if request.method == "DELETE":
         s = CheckListSerializer(data=request.data)
         if s.is_valid() and request.data.get("id"):
