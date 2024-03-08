@@ -4,7 +4,6 @@ import './css/checklist.css';
 import 'bootstrap/dist/css/bootstrap.css'
 
 
-export const WrapperContent = ({childre}) =>{
-        console.log(childre)
-        // return ({childre})
+export const WrapperContent = ({props}) =>{
+    return (<div>{props}</div>)
     }

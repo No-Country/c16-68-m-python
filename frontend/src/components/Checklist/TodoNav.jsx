@@ -1,12 +1,12 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/checklist.css';
-
+import { CreateTodo } from './CreateTodo';
+import { WrapperContent } from './WrapperContent';
 
 export const TodoNav = () =>{
 
     function createForm(){
-        
     }
     return (
         <div id="TodoNav" className='nav-options'>

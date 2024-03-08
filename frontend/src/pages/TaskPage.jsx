@@ -9,15 +9,13 @@ import { useEffect, useState} from 'react';
 import {getAllTask} from '../api/getlist.api'
 
 export const TaskPage = () =>{
+    
     const [habits, SetHabits] = useState([])
     const [loading, SetLoading] = useState(true)
-
     useEffect(() => {
         async function loadTask(){
             try{
                 const r = await getAllTask();
-                console.log(`IN USEEFFECT`)
-                console.log(r.data)
                 SetHabits(r.data);
             }
             catch(e){
@@ -25,26 +23,23 @@ export const TaskPage = () =>{
             }
             finally{
                 SetLoading(false)
-        }
+            }
         }
         loadTask();
     }, []);
-
+    console.log(habits)
+    
     if (loading){
         return(
-            <h1>LOADING</h1>
-        )
-    }
-
+            <div className="loader">UnaPausa</div>
+            )
+        }
     return (
-        <div id="TaskPage" style={{width:"100%", height:"100%"}}>
+        <div id="TaskPage" style={{ width:"100%", height:"100%" }}>
             <TodoWrapper>
                 <TodoNav/>
-                <WrapperContent>
-                    {console.log(<Tasklist data={habits.map}/>)}
-                    {/* <Tasklist data={habits}/> */}
+                <WrapperContent props={<Tasklist data={habits}/>}>
                 </WrapperContent>
-                {/* <Tasklist data={habits}/> */}
             </TodoWrapper>
         </div>
     )   
