@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -67,7 +68,9 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://localhost"
+    "http://localhost",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000"
 ]
 
 ROOT_URLCONF = "unapausa.urls"
@@ -87,7 +90,7 @@ SIMPLE_JWT = {
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR,'build')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -149,6 +152,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static')
+]
 
 MEDIA_ROOT = BASE_DIR / "files"
 MEDIA_URL = "/media-files/"
