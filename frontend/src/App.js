@@ -11,6 +11,7 @@ import BienestarPage from 'pages/BienestarPage';
 import LoginForm from './components/Login/LoginForm';
 import RegisterForm from'./components/Register/RegisterForm';
 import RastreoEmociones from'./pages/RastreoEmociones';
+import { TaskPage } from 'pages/TaskPage';
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route element={<ProtectedRoute canActivate={isLoggIn} redirectPath='/login' />}>
               <Route path='dashboard' element={<Dashboard></Dashboard>}></Route>
               <Route path='dashboard/emociones' element={<RastreoEmociones></RastreoEmociones>}></Route>
+              <Route path='dashboard/habitos-saludables' element={<TaskPage></TaskPage>}></Route>
               <Route path='dashboard/bienestar' element={<BienestarPage />}></Route>
             </Route>
 

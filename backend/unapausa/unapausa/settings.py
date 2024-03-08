@@ -31,7 +31,9 @@ SECRET_KEY = "django-insecure-=i80dz(hd*49ex*+#b=6)f_(l@g)ywlftm0p^5()gg5kvy)))i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+]
 
 
 # Application definition
@@ -42,7 +44,9 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
     "corsheaders",
+    "rest_framework.authtoken",
     "accounts",
+    "checklist",
     "logEmotion",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -62,13 +66,10 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware"
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost"
-]
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://localhost"]
 
 ROOT_URLCONF = "unapausa.urls"
 

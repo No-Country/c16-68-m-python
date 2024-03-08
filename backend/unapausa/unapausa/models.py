@@ -3,6 +3,7 @@ from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
 from rest_framework_simplejwt.tokens import RefreshToken
 
+
 class CustomUserManager(BaseUserManager):
 
     def create_user(self, email, password, **extra_fields):
@@ -71,18 +72,19 @@ class Emotions(models.Model):
         for emotion_name, _ in cls.EMOTIONS:
             cls.objects.get_or_create(name=emotion_name) """
 
+
 class EmotionsLog(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE) 
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     date_joined = models.DateField(auto_now_add=True)
     emotion = models.ForeignKey(Emotions, on_delete=models.CASCADE)
     description = models.TextField()
     count = models.IntegerField(default=1)
 
     class Meta:
-        unique_together = ('user', 'emotion')
+        unique_together = ("user", "emotion")
 
     def __str__(self):
-        return f"{self.emotion.name}/ Date: {self.date_joined} "
+        return f"{self.emotion_id.name}/ {self.date_joined} "
 
 
 class HealthyHabit(models.Model):
@@ -97,7 +99,10 @@ class CheckList(models.Model):
     user_id = models.ForeignKey("unapausa.User", on_delete=models.CASCADE)
     habit_id = models.ForeignKey(HealthyHabit, on_delete=models.CASCADE)
     date_joined = models.DateField()
+    when_was_done = models.DateField(null=True, blank=True)
     is_done = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"habit: {self.habit_id.habit_name}/ date: {self.date_joined}/ is_done: {self.is_done}"
+        return (
+            f"{self.habit_id.habit_name}/ {self.date_joined}/ is_done: {self.is_done}"
+        )
