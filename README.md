@@ -156,7 +156,7 @@ Esta colaboración multidisciplinaria no solo impulsa la innovación y la eficie
 | Poll Yasiel                | Front End           | [LinkedIn](//yasiel-poll-4866222b1/)             | -                                   | -                              |
 | Solarte Andres              | Backend             | [LinkedIn](//andresjrs/)                         | -                                   | -                              |
 | Soler Luyeinne             | -                   | [GitHub](https://github.com/Luyeinne)             | luyeinnesol@gmail.com                | [GitHub](https://github.com/Luyeinne) |
-| Vacc Ruth                   | -                   | [LinkedIn](//ruth-vaccari-b271a6268/)            | -                                   | -                              |
+| Vaccari Ruth                   | -                   | [LinkedIn](//ruth-vaccari-b271a6268/)            | -                                   | -                              |
 | Cristian Nieves             | Backend             | [GitHub](https://github.com/cristian-nievesdeveloper) | cristiannievesdeveloper@gmail.com   | [Sitio web](https://www.cristiannieves.site) |
 | Scarlet Vargas              | TL                  | -                                                | scarletvf47@gmail.com                | -                              |
 
