@@ -16,7 +16,12 @@ urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
     path("test/", TestAuthenticationView.as_view(), name="test"),
     path("logout/", LogoutView.as_view(), name="logout"),
+    path("password-reset/", PasswordResetRequestView.as_view(), name="password-reset"),
+    path("password-reset-confirm/<uidb64>/<token>/", PasswordResetConfirm.as_view(), name="reset-password-confirm"),
+    path("set-new-password/", SetNewPasswordView.as_view(), name="set-new-password"),
     #path('jwt/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     #path('jwt/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     #path('jwt/token/verify/', TokenVerifyView.as_view(), name='token_verify'),"""
 ]
+
+
